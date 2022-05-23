@@ -24,12 +24,12 @@ class DatabaseSeeder extends Seeder
             'name' => 'Charan Grewal' 
          ]);
 
-        Post::factory(5)->create([
+        Post::factory(7)->create([
             'user_id' => $user->id
         ]);
 
 
-        Post::factory(2)->create([
+        Post::factory(8)->create([
             'user_id' => $user2->id
         ]);
     }
