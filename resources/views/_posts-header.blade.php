@@ -29,7 +29,9 @@
                 <div x-show="show" class="py-2 absolute bg-gray-100 w-full mt-2 rounded-xl z-50" style="display: none;">
                     <a href="/" class="block text-left px-3 text-sm leading-5 hover:bg-blue-500 focus:bg-blue-500 hover:text-white">All</a>
                     @foreach ($categories as $category)
-                        <a href="/categories/{{ $category->slug }}" class="block text-left px-3 text-sm leading-5 hover:bg-blue-500 focus:bg-blue-500 hover:text-white">{{ ucwords($category->name) }}</a>
+                        <a href="/categories/{{ $category->slug }}" 
+                            class="block text-left px-3 text-sm leading-5 hover:bg-blue-500 focus:bg-blue-500 hover:text-white 
+                            {{ isset($currentCategory) && $currentCategory->is($category) ? 'bg-blue-500 text-white' : '' }}">{{ ucwords($category->name) }}</a>
                     @endforeach
                 </div>
             </div>
